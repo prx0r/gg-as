@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree as ET
 
-from gitgoblin.http import ResilientHTTP
+from gitgoblin.http_client import ResilientHTTP
 from gitgoblin.models import Entity, Observation, evidence_for_payload
 from gitgoblin.settings import AppSettings
 

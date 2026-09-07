@@ -5,7 +5,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 
-from gitgoblin.http import RateLimiter
+from gitgoblin.http_client import RateLimiter
 from gitgoblin.db import Store
 from gitgoblin.hashing import sha256_json, stable_id
 from gitgoblin.models import ScanRun

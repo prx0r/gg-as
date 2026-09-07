@@ -1,0 +1,92 @@
+{
+  "test_run": "2026-09-07T14:29:16.670711+00:00",
+  "duration_seconds": 80.2,
+  "total_tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "results": [
+    {
+      "timestamp": "2026-09-07T14:27:56.511156+00:00",
+      "step": "intent_parse",
+      "status": "PASS",
+      "details": {
+        "input": "I want to come top in Google AI results for Norweg",
+        "real_intent": "rank",
+        "niche": "spare parts",
+        "market": "norway"
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:27:56.511200+00:00",
+      "step": "intent_parse",
+      "status": "PASS",
+      "details": {
+        "input": "I want ChatGPT to recommend my EV charger products",
+        "real_intent": "shopify",
+        "niche": "ev charger",
+        "market": "global"
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:27:56.511229+00:00",
+      "step": "intent_parse",
+      "status": "PASS",
+      "details": {
+        "input": "I want agents to pick my Shopify store over compet",
+        "real_intent": "shopify",
+        "niche": "general",
+        "market": "global"
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:27:56.511241+00:00",
+      "step": "engineer_discovery",
+      "status": "PASS",
+      "details": {
+        "seeds_found": 2,
+        "seeds": [
+          "ge0ffrey",
+          "alishazal"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:28:22.358685+00:00",
+      "step": "cloudflare_ai",
+      "status": "PASS",
+      "details": {
+        "has_response": true,
+        "response_length": 2397
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:28:40.455320+00:00",
+      "step": "gitgoblin_scan",
+      "status": "PASS",
+      "details": {
+        "observations": 585,
+        "signals": 0,
+        "duration_seconds": 18.1
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:28:40.458263+00:00",
+      "step": "campaign_create",
+      "status": "PASS",
+      "details": {
+        "path": "campaigns/seo-find-engineers-for-google-ai-ads-seo/config.yaml"
+      }
+    },
+    {
+      "timestamp": "2026-09-07T14:29:16.670407+00:00",
+      "step": "campaign_run",
+      "status": "PASS",
+      "details": {
+        "campaign_id": "seo-find-engineers-for-google-ai-ads-seo",
+        "observations": 1058,
+        "signals": 0,
+        "duration_seconds": 36.2
+      }
+    }
+  ]
+}

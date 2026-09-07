@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from gitgoblin.http import ResilientHTTP
+from gitgoblin.http_client import ResilientHTTP
 
 
 GRAPHQL_URL = "https://api.github.com/graphql"

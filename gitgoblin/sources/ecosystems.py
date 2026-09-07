@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from gitgoblin.http import ResilientHTTP
+from gitgoblin.http_client import ResilientHTTP
 from gitgoblin.models import Entity, Observation, evidence_for_payload, utcnow
 from gitgoblin.settings import AppSettings
 
