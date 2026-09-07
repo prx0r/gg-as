@@ -1,0 +1,186 @@
+id: high-certainty-agentic-commerce
+description: >
+  Find neglected, locally stocked, compatibility-heavy installed-base niches
+  where existing suppliers are operationally competent but digitally terrible.
+  Build the definitive visual + compatibility + technical product graph,
+  syndicate through Shopify Catalog and Google Merchant Center,
+  and let agents route high-certainty replacement demand to us.
+
+seed_builders:
+  # Google Merchant Center / Feed Infrastructure
+  - FeedArmy           # Emmanuel Flossie — identified 8 conversational attributes
+  - maxgeorge          # Max George — former Google Agentic Commerce Lead (built UCP)
+  - vivekchandran      # Vivek Chandran — TPM Lead AI Overview & Mode
+  - jingyli            # Jing Li — Google Location/serviceability
+  - AndrewLolk         # Andrew Lolk — sharpest AI Max Shopping analysis
+  - mikeryanretail     # Mike Ryan — analytical retail PPC, AI Mode ads
+  - PPCKirk            # Kirk Williams — skeptical Shopping/feed operator
+  - GinnyMarvin        # Google Ads Liaison — platform changes
+  - rustybrick         # Barry Schwartz — catches obscure Google tests
+  - skuanalyzer        # Samuli Kesseli — conversational attributes implementation
+
+  # Shopify / UCP / Catalog
+  - igrigorik          # Ilya Grigorik — UCP architect
+  - gil--              # Gil Greenberg — iMessage shopping agent
+  - yoavweiss          # Yoav Weiss — Shopify/Web standards
+
+  # Compatibility / Parts / Spare Parts
+  # (seed from Partful-style companies)
+
+  # Nordic Market Intelligence
+  - til_fabian         # Fabian van Til — Norwegian/Swedish SEO results
+
+  # Supplier OS / Voice / Dispatch
+  - ge0ffrey           # Geoffrey De Smet — Timefold CTO (dispatch optimization)
+
+  # Commerce Agents / Ranking
+  - alishazal          # Ali Shazal — Anthropic commerce agents
+  - jalexspringer      # Alex Springer — OpenAttribution (content attribution)
+
+  # Home Services / Installed Base
+  - georgeprobook      # George Eliadis — Probook (58k daily interactions)
+
+keywords:
+  # Core thesis
+  - compatibility
+  - replacement part
+  - spare part
+  - OEM
+  - MPN
+  - GTIN
+  - supersession
+  - superseded
+  - compatible with
+  - fits
+  - fits model
+  - part number
+  - service bulletin
+
+  # Google Merchant Center conversational attributes
+  - related_product
+  - required_part
+  - substitute
+  - accessory
+  - product_detail
+  - question_and_answer
+  - document_link
+  - popularity_rank
+  - conversational attributes
+  - AI Mode
+  - AI Overviews
+
+  # Installed base / lifecycle
+  - installed base
+  - lifecycle
+  - replacement cycle
+  - failure rate
+  - maintenance
+  - wear out
+  - obsolete
+  - end of life
+  - discontinued
+
+  # Nordic / Regional
+  - heat pump
+  - HVAC
+  - boiler
+  - cabin
+  - hytte
+  - mökki
+  - sauna
+  - marine
+  - robot mower
+  - automower
+  - weather station
+
+  # Supplier digital quality
+  - product feed
+  - merchant center
+  - catalog quality
+  - feed optimization
+  - product data
+  - structured data
+  - schema.org
+  - JSON-LD
+  - GTIN
+  - MPN
+
+  # Agent commerce
+  - agentic commerce
+  - AI shopping
+  - agent discovery
+  - product graph
+  - compatibility graph
+  - visual identification
+  - photo search
+  - image recognition
+
+arxiv_queries:
+  - spare part identification visual
+  - product compatibility graph
+  - agent commerce product discovery
+  - visual product recognition replacement
+  - installed base lifecycle management
+
+rss_feeds:
+  - https://blog.google/products/ads-commerce/feed/
+  - https://support.google.com/merchants/answer/17085370  # conversational attributes
+  - https://shopify.engineering/blog.atom
+
+ecosyste_repos:
+  # Google Merchant Center / Feed
+  - google/merchant-center-docs
+  - google/ads-api-samples
+
+  # Shopify / UCP
+  - Universal-Commerce-Protocol/ucp
+  - Shopify/ucp-cli
+  - Shopify/shop-chat-agent
+
+  # Compatibility / Parts
+  - partful/partful  # if they open source
+  - schemaorg/schemaorg  # isAccessoryOrSparePartFor
+
+  # Timefold / Dispatch
+  - TimefoldAI/timefold-solver
+  - TimefoldAI/timefold-quickstarts
+
+  # Commerce Agents
+  - anthropics/commerce-agents
+  - NVIDIA-AI-Blueprints/Retail-Agentic-Commerce
+  - Accio-org/CommerceAgentBench
+
+  # Voice / Supplier OS
+  - livekit/agents
+  - livekit-examples/python-agents-examples
+  - codewithmuh/hearthline
+
+  # Attribution
+  - openattribution-org
+
+expertise_languages: [python, typescript, sql]
+
+primitive_rules:
+  # Core thesis primitives
+  compatibility-graph: [compatible, fit, part, model, serial, supersession, OEM, MPN, GTIN]
+  installed-base-lifecycle: [installed, lifecycle, replacement, maintenance, failure, wear, obsolete]
+  supplier-digital-arbitrage: [supplier, feed, catalog, normalize, structured, data, quality]
+
+  # Google Merchant Center primitives
+  gmc-conversational-attributes: [question_and_answer, related_product, product_detail, document_link, popularity_rank]
+  gmc-feed-optimization: [feed, title, description, attribute, image, taxonomy]
+  ai-mode-visibility: [AI Mode, AI Overviews, conversational, shopping]
+
+  # Agent commerce primitives
+  agent-product-discovery: [agent, discovery, search, recommend, rank, filter]
+  agent-checkout: [checkout, cart, payment, transaction, identity]
+  visual-product-identification: [photo, image, vision, identify, recognize, match]
+
+  # Supplier OS primitives
+  supplier-normalization: [normalize, standardize, clean, enrich, transform]
+  voice-booking: [voice, call, appointment, schedule, availability]
+  dispatch-optimization: [dispatch, schedule, route, assign, optimize]
+
+  # Nordic market primitives
+  nordic-installed-base: [heat pump, cabin, sauna, marine, weather station, robot mower]
+  nordic-language: [Norwegian, Finnish, Swedish, Danish, translation, localization]
