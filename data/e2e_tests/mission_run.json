@@ -1,0 +1,95 @@
+{
+  "mission": "Find engineers for Google AI ads SEO",
+  "seeds": [
+    "AndrewLolk",
+    "mikeryanretail",
+    "FeedArmy",
+    "rustybrick",
+    "MenachemAni"
+  ],
+  "observations": 42,
+  "signals": 0,
+  "duration_seconds": 43.2,
+  "log": [
+    {
+      "step": "add_seeds",
+      "status": "START",
+      "details": "Adding practitioner seeds",
+      "time": "2026-09-07T15:10:05.312550"
+    },
+    {
+      "step": "seed_added",
+      "status": "OK",
+      "details": {
+        "seed": "AndrewLolk"
+      },
+      "time": "2026-09-07T15:10:05.318737"
+    },
+    {
+      "step": "seed_added",
+      "status": "OK",
+      "details": {
+        "seed": "mikeryanretail"
+      },
+      "time": "2026-09-07T15:10:05.323321"
+    },
+    {
+      "step": "seed_added",
+      "status": "OK",
+      "details": {
+        "seed": "FeedArmy"
+      },
+      "time": "2026-09-07T15:10:05.327787"
+    },
+    {
+      "step": "seed_added",
+      "status": "OK",
+      "details": {
+        "seed": "rustybrick"
+      },
+      "time": "2026-09-07T15:10:05.332639"
+    },
+    {
+      "step": "seed_added",
+      "status": "OK",
+      "details": {
+        "seed": "MenachemAni"
+      },
+      "time": "2026-09-07T15:10:05.337044"
+    },
+    {
+      "step": "add_seeds",
+      "status": "DONE",
+      "details": "5 seeds added",
+      "time": "2026-09-07T15:10:05.337078"
+    },
+    {
+      "step": "scan",
+      "status": "START",
+      "details": "Running scan with 5 seeds",
+      "time": "2026-09-07T15:10:05.337083"
+    },
+    {
+      "step": "scan",
+      "status": "DONE",
+      "details": {
+        "observations": 42,
+        "signals": 0,
+        "duration_seconds": 43.2
+      },
+      "time": "2026-09-07T15:10:48.555338"
+    },
+    {
+      "step": "results",
+      "status": "START",
+      "details": "Checking signals",
+      "time": "2026-09-07T15:10:48.555360"
+    },
+    {
+      "step": "results",
+      "status": "DONE",
+      "details": "0 signals found",
+      "time": "2026-09-07T15:10:48.558067"
+    }
+  ]
+}
