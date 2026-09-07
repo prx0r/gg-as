@@ -1,168 +1,225 @@
 # GG-AS — GitGoblin Agent Commerce
 
-**Technical alpha for agent-native commerce.** GG-AS watches Shopify/UCP infrastructure, agent-shopping ranking, supplier OS, home services AI, and compatibility matching; converts activity into evidence-backed observations; detects convergence across Google/Shopify/Meta/OpenAI; extracts the primitives; and emits product opportunities.
+*Technical alpha for agent-native commerce. Watches Shopify/UCP, Google/Merchant Center, Timefold/dispatch, and Anthropic/commerce-agents to find capabilities before they ship.*
 
-Built on GitGoblin. Focused on the agent commerce opportunity.
+---
 
-GitGoblin is designed as both:
+## What Is This?
 
-1. a standalone frontier-intelligence product; and
-2. a specialized oracle for VentureLab/venture-lab.
+GG-AS is a frontier-intelligence system focused on the agent-commerce stack. It watches high-signal engineers, repositories, and protocol changes to detect:
 
-## What is implemented
+- New ranking signals
+- Filter semantics changes
+- Compatibility primitives
+- Voice/dispatch patterns
+- Attribution mechanisms
 
-- GitHub public-profile, following, starred-repository, public-event and repository collectors.
-- OpenAlex recent-work collector.
-- arXiv Atom collector.
-- ecosyste.ms repository-metadata collector.
-- Hacker News official API collector.
-- Generic RSS/Atom technical-publication collector.
-- SQLite WAL store with idempotent append-only observation ingestion.
-- Evidence hashes and source URLs on every observation.
-- Builder expertise scoring that caps raw popularity influence.
-- Time-decayed weighted attention, momentum, novelty and independence scoring.
-- Frontier convergence signals ("technical alpha").
-- Rule-based architectural primitive extraction with sector overrides.
-- Product-opportunity derivation and build/research/watch/reject decisions.
-- License classifier to prevent accidental source-code incorporation.
-- FastAPI service, CLI, dashboard, Docker image and scheduler.
-- VentureLab-compatible `MarketObservation` and `Opportunity` export.
-- Deterministic tests and a certificate generator that records actual pytest output.
+**It is NOT a content scraper.** It is a frontier-intelligence system.
 
-The core decision path does **not** require an LLM. An optional OpenAI-compatible analyzer can enrich architecture analysis, but it cannot manufacture evidence or override deterministic scoring.
+---
 
-## Quick start
+## Quick Start
 
 ```bash
-python -m venv .venv
-. .venv/bin/activate
+# 1. Setup
+cd /root/gg-as
 pip install -e '.[dev]'
 cp .env.example .env
+# Add GITHUB_TOKEN to .env
 
-# Add a seed builder to an industry profile
-gitgoblin seed databases carlsverre
+# 2. Initialize
+python3 -m gitgoblin.cli init
 
-# Live scan: GitHub + arXiv + OpenAlex + HN
-gitgoblin scan databases --seed carlsverre --expand 2
+# 3. Run a scan
+python3 -m gitgoblin.cli scan high-certainty-agentic-commerce \
+    --seed igrigorik --seed gil-- --mode quick
 
-# Inspect signals
-gitgoblin rank --sector databases
-
-# Export to VentureLab/venture-lab
-gitgoblin export --sector databases --out build/venture-lab-export.json
-
-# Dashboard + API
-gitgoblin serve --host 0.0.0.0 --port 8787
+# 4. Check results
+python3 -m gitgoblin.cli rank --sector high-certainty-agentic-commerce
 ```
 
-For GitHub automation, set `GITHUB_TOKEN`; unauthenticated requests have much lower limits. OpenAlex now uses API keys for scaled API access, so set `OPENALEX_API_KEY` for production use.
+---
 
-## API
+## Commands
 
-- `GET /health`
-- `POST /v1/seeds`
-- `GET /v1/seeds/{sector}`
-- `POST /v1/scans`
-- `GET /v1/signals`
-- `GET /v1/opportunities`
-- `GET /v1/entities/{entity_id}`
-- `GET /v1/export/venture-lab`
-- `GET /` — compact dashboard
-
-Interactive OpenAPI docs are provided automatically by FastAPI at `/docs`.
-
-## Why it is not just GitHub Trending
-
-GitGoblin's unit of signal is not `star_count`. It weights:
-
-- **who** acted (demonstrated technical depth),
-- **what** action they took (star < fork < PR/dependency/authoring),
-- **when** they acted (early + recent > post-viral),
-- **independence** (five unrelated experts > five coworkers),
-- **novelty/saturation** of the target,
-- **momentum** in recent high-quality interactions,
-- **source breadth** across code/research/discourse.
-
-This is deliberately designed to surface small projects with strong expert convergence before broad popularity.
-
-## Architecture
-
-```text
-GitHub ─┐
-GHArchive/ecosyste.ms ─┤
-OpenAlex/arXiv ─────────┤
-HN/RSS ─────────────────┤
-future sensors ─────────┘
-          │
-          ▼
-  normalized observations
-  + evidence + timestamps
-          │
-          ▼
-   entity/identity graph
-          │
-          ▼
-    builder expertise
-          │
-          ▼
- weighted attention graph
-          │
-          ▼
- convergence + novelty + momentum
-          │
-          ▼
-      FrontierSignal
-          │
-          ▼
- architectural primitive extraction
-          │
-          ▼
- opportunity derivation
-      │             │
-      ▼             ▼
- GitGoblin API   VentureLab oracle
-```
-
-See `docs/ARCHITECTURE.md` for contracts and extension points.
-
-## Industry profiles
-
-Profiles live in `configs/sectors/*.yaml`. Included:
-
-- `ai`
-- `databases`
-- `devtools`
-
-A profile selects seed builders, research queries, keywords, expertise languages and primitive rules. Adding robotics, biotech, security, climate-tech, crypto-infrastructure, etc. is configuration plus optional new source adapters—not a fork of the core engine.
-
-## Evidence doctrine
-
-Production observations must have:
-
-- source identity,
-- source family,
-- occurred/observed timestamps,
-- artifact SHA-256,
-- source URL where available,
-- quality metadata when temporal precision is weaker than an event timestamp.
-
-Current GitHub following relationships are recorded as **snapshots**, never falsely timestamped as historical follow events.
-
-Test fixtures are explicitly flagged `is_test_fixture=true` and are excluded from normal production queries/exports.
-
-## Testing
+### `scan` — Run a frontier scan
 
 ```bash
-pytest -q
-python -m gitgoblin.certify --output build/CERTIFICATE.json
+# Quick mode (GitHub only, fast)
+python3 -m gitgoblin.cli scan <sector> --seed <builder> --mode quick
+
+# Thorough mode (GitHub + arXiv)
+python3 -m gitgoblin.cli scan <sector> --seed <builder> --mode thorough
+
+# Full mode (everything)
+python3 -m gitgoblin.cli scan <sector> --seed <builder> --mode full
 ```
 
-The certificate records the actual pytest return code/output and a content digest of the codebase. See `docs/TESTING.md`.
+### `rank` — View signals
 
-## Privacy / use boundaries
+```bash
+python3 -m gitgoblin.cli rank --sector <sector> --limit 20
+```
 
-GitGoblin is intended for aggregate technical-intelligence analysis, not spam, stalking, or sale of personal contact data. Do not defeat upstream access restrictions. Respect source/API terms, rate limits, and data licenses. GitHub's 2026 changes restricting repository stargazer lists are one reason the architecture uses redundant event sources rather than scraping restricted UI/API surfaces.
+### `campaign` — Run a focused rabbit hole
 
-## Commercial model
+```bash
+# Run a campaign
+python3 -m gitgoblin.cli campaign run allaway-finland
 
-The open surface can be SDK/schema/dashboard samples; the valuable private core is the historical attention graph, calibrated builder scores, sector-specific seed graph, convergence model, primitive/opportunity models and accumulated outcome feedback. See `docs/MONETIZATION.md`.
+# Add fresh seeds
+python3 -m gitgoblin.cli campaign run allaway-finland --seed newaccount
+
+# List campaigns
+python3 -m gitgoblin.cli campaign list
+```
+
+### `serve` — Start API/dashboard
+
+```bash
+python3 -m gitgoblin.cli serve --port 8787
+# Dashboard: http://localhost:8787
+# API docs: http://localhost:8787/docs
+```
+
+### Background Mode
+
+```bash
+# Watch mode (scans every 6 hours)
+./run.sh watch high-certainty-agentic-commerce
+
+# Or use scheduler directly
+nohup python3 -m gitgoblin.scheduler \
+    --sector high-certainty-agentic-commerce \
+    --interval 3600 &
+```
+
+---
+
+## Campaigns
+
+Campaigns are self-contained rabbit holes for specific topics.
+
+```bash
+# Create campaign
+mkdir -p campaigns/my-campaign
+cat > campaigns/my-campaign/config.yaml << 'EOF'
+id: my-campaign
+description: "What we're investigating"
+seeds:
+  - engineer1
+  - engineer2
+keywords:
+  - compatibility
+  - spare part
+status: ACTIVE
+EOF
+
+# Run campaign
+python3 -m gitgoblin.cli campaign run my-campaign
+
+# Add fresh seeds
+python3 -m gitgoblin.cli campaign run my-campaign --seed newaccount
+```
+
+---
+
+## MCP Server
+
+GG-AS exposes tools via MCP for agent integration:
+
+```bash
+# Start MCP server
+python3 -m gitgoblin.mcp_server
+```
+
+### Available Tools
+
+| Tool | Description |
+|------|-------------|
+| `scan_sector` | Run a frontier scan |
+| `get_signals` | Get convergence signals |
+| `get_opportunities` | Get product opportunities |
+| `run_campaign` | Run a focused campaign |
+| `list_campaigns` | List all campaigns |
+| `add_seed` | Add a seed builder |
+| `search_entities` | Search repos/papers/developers |
+
+---
+
+## What GitGoblin Finds
+
+| Signal Type | What It Means |
+|-------------|---------------|
+| **BUILD** | Strong convergence, ready to implement |
+| **RESEARCH** | Interesting but needs more investigation |
+| **WATCH** | Early signals, monitor for changes |
+
+### Scoring
+
+| Metric | Range | Meaning |
+|--------|-------|---------|
+| technical_alpha | 0-1 | How important is this convergence? |
+| confidence | 0-1 | How sure are we? |
+| novelty | 0-1 | How new is this? |
+| momentum | 0-1 | Is activity accelerating? |
+
+---
+
+## Rate Limits
+
+| Mode | GitHub Calls | Time |
+|------|--------------|------|
+| quick | ~100 | 1-2 min |
+| thorough | ~300 | 3-5 min |
+| full | ~500 | 5-10 min |
+
+**Always use `--mode quick` for testing.**
+
+---
+
+## File Structure
+
+```
+gg-as/
+├── gitgoblin/
+│   ├── cli.py              # Command-line interface
+│   ├── api.py              # REST API
+│   ├── mcp_server.py       # MCP tools
+│   ├── pipeline/
+│   │   ├── scout.py        # Main scan orchestrator
+│   │   ├── signals.py      # Signal detection
+│   │   └── opportunities.py
+│   ├── sources/
+│   │   ├── github.py       # GitHub collector
+│   │   ├── arxiv.py        # arXiv collector
+│   │   └── openalex.py     # OpenAlex collector
+│   └── db.py               # SQLite store
+├── configs/sectors/         # Sector configurations
+├── campaigns/               # Focused rabbit holes
+├── scripts/
+│   ├── algo_surface_detector.py  # Detect ranking changes
+│   └── resource_monitor.py       # RAM/CPU protection
+├── output/                  # Intelligence reports
+├── data/                    # SQLite + cache
+└── logs/                    # Run logs
+```
+
+---
+
+## Why This Matters for Agent Commerce
+
+GitGoblin finds the engineers building the infrastructure we need:
+
+| What We Need | Who Builds It | GitGoblin Finds |
+|--------------|---------------|-----------------|
+| Compatibility graphs | Shopify/UCP engineers | PRs, schemas, capabilities |
+| Ranking signals | Google/Merchant Center | Feed attributes, AI Max |
+| Voice/dispatch | LiveKit, Timefold | Booking patterns, constraints |
+| Attribution | OpenAttribution | Content tracking protocols |
+
+**The alpha is in the implementation details, not the repos themselves.**
+
+---
+
+*Documentation generated: 2026-09-07*

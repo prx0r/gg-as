@@ -1,162 +1,148 @@
-# AGENTS.md — GitGoblin
+# AGENTS.md — GG-AS
 
-Read this before changing the repository.
+*For agents using GG-AS to monitor the agent-commerce frontier.*
+
+---
 
 ## Mission
 
-GG-AS converts public technical activity in agent-native commerce into **evidence-backed frontier signals**, then into falsifiable product hypotheses. It watches Shopify/UCP, Google/ACP, Meta/feeds, Anthropic/commerce-agents, Timefold/scheduling, and Probook/supplier-OS to find capabilities before they ship.
+GG-AS converts public technical activity in agent-native commerce into **evidence-backed frontier signals**, then into falsifiable product hypotheses.
 
-## Non-negotiable invariants
+It watches Shopify/UCP, Google/Merchant Center, Timefold/dispatch, and Anthropic/commerce-agents to find capabilities before they ship.
 
-1. **No evidence, no signal.** Every production observation carries a source reference and SHA-256 evidence hash.
-2. **Never invent timestamps.** Snapshot relationships (for example current GitHub follows) are labeled `snapshot_only`; event timestamps are used only when an upstream source supplies them.
-3. **Test fixtures never become market evidence.** Fixtures use `is_test_fixture=true`; default DB queries and VentureLab exports exclude them.
-4. **No hidden network fallback.** A failed collector raises or records an explicit source failure; it must not silently substitute fabricated data.
-5. **No popularity-only ranking.** Raw stars/followers are capped components, not the target metric.
-6. **Independence matters.** Multiple correlated actors must not be counted as independent confirmations.
-7. **Respect upstream access controls.** Do not scrape around GitHub/API restrictions or use the product for spam/contact harvesting.
-8. **License before reuse.** Study any public architecture, but do not incorporate code until its license is known and compatible.
-9. **Cuntgoblin compatibility is a contract.** Changes to export objects require tests against the checked-in compatibility schemas.
-10. **A markdown claim is not a test result.** Run the commands and retain the log/certificate.
+---
 
-## Work order
+## How GG-AS Works
 
-For any material change:
+### 1. Seeding
 
-```text
-READ contracts/config
-→ define behavior and failure mode
-→ write/adjust test
-→ implement
-→ run targeted test
-→ run full pytest
-→ run certificate
-→ inspect build/CERTIFICATE.json and build/test.log
-```
-
-## Commands
+Start with known high-signal engineers:
 
 ```bash
-# full deterministic suite
-pytest -q
-
-# verbose failed test
-pytest -q -x -vv
-
-# real certification; invokes pytest unless --skip-pytest
-python -m gitgoblin.certify --output build/CERTIFICATE.json
-
-# initialize and run locally
-gitgoblin init
-gitgoblin seed databases carlsverre
-gitgoblin scan databases --seed carlsverre --expand 2
-gitgoblin serve --port 8787
+python3 -m gitgoblin.cli seed high-certainty-agentic-commerce igrigorik
+python3 -m gitgoblin.cli seed high-certainty-agentic-commerce gil--
 ```
 
-## Source adapter contract
+### 2. Scanning
 
-A source adapter returns:
+GG-AS follows their GitHub activity:
+- Repos they star
+- PRs they review
+- Issues they comment on
+- People they follow
+- Dependencies they add
 
-```python
-(list[Entity], list[Observation])
-```
+### 3. Convergence Detection
 
-Rules:
+When **2+ independent experts** interact with the same target, it's a signal.
 
-- normalize IDs with a namespace (`github:user:`, `github:repo:`, `openalex:work:`, etc.);
-- preserve original source URL/record ID in `Evidence`;
-- hash the exact normalized source payload used for the observation;
-- distinguish `occurred_at` from collection `observed_at`;
-- raise on malformed/forbidden upstream responses unless the caller intentionally treats that source as optional;
-- do not let source-specific fields leak into cross-source scoring except through `value`, `tags` or entity attrs.
+### 4. Opportunity Emission
 
-## Adding an industry
+Signals are scored and classified:
+- **BUILD**: Strong convergence, ready to implement
+- **RESEARCH**: Interesting, needs more investigation
+- **WATCH**: Early signals, monitor
 
-Prefer `configs/sectors/<sector>.yaml` first. Add code only when the industry requires a genuinely new source type or primitive extractor.
+---
 
-A sector file contains:
+## Campaign System
 
-- seed builders,
-- keywords,
-- research queries,
-- expertise languages,
-- primitive rules.
+Campaigns are self-contained rabbit holes for specific topics.
 
-Do not duplicate the engine per sector.
-
-## Adding a source
-
-1. Implement a collector under `gitgoblin/sources/`.
-2. Add a parser test using a recorded/controlled payload.
-3. Document source terms, rate limits and temporal semantics.
-4. Wire it into `Scout` only if it is generally useful; otherwise compose it in a sector-specific runner later.
-5. Add its source family to evidence-breadth reasoning only when genuinely independent.
-
-## Scoring changes
-
-Scoring code must remain deterministic and versionable. A new metric needs:
-
-- motivation,
-- explicit formula,
-- bounded range,
-- regression test,
-- replay/calibration plan.
-
-Never let an LLM directly set `technical_alpha` or `decision`.
-
-## Repository reuse workflow
-
-When GitGoblin flags a promising repository:
-
-```text
-license → architecture → benchmarks/tests → dependency graph → primitive → clean product hypothesis
-```
-
-For permissive code, reuse still requires notices/attribution and compliance with the exact license. For copyleft/unknown repositories, default to API consumption, interoperability, or independent reimplementation until reviewed.
-
-## Background execution rules
-
-**NEVER run scans in the foreground.** Always use `setsid` to fully detach.
+### Creating a Campaign
 
 ```bash
-# WRONG — blocks the shell
-gitgoblin scan agent_commerce --expand 2
-
-# CORRECT — fully detached, survives shell exit
-setsid gitgoblin scan agent_commerce --expand 1 --no-research > /tmp/gitgoblin_scan.log 2>&1 &
-
-# CORRECT — with PID tracking
-setsid bash -c 'echo \$\$ > /tmp/gitgoblin.pid && gitgoblin scan agent_commerce --expand 1 --no-research >> /tmp/gitgoblin_scan.log 2>&1' &
-
-# Check if running
-ps aux | grep gitgoblin | grep -v grep
-
-# Check results
-cat /tmp/gitgoblin_scan.log | tail -20
-
-# Kill if needed (never kill opencode processes)
-kill $(cat /tmp/gitgoblin.pid) 2>/dev/null
+mkdir -p campaigns/allaway-finland
+cat > campaigns/allaway-finland/config.yaml << 'EOF'
+id: allaway-finland
+description: "Norwegian maritime spare parts"
+seeds:
+  - uqp_no
+  - copra_no
+keywords:
+  - maritime
+  - spare part
+  - Norwegian
+status: ACTIVE
+EOF
 ```
 
-**Why `setsid`:** `nohup cmd &` still attaches to the parent shell. `setsid` creates a new session, fully detaching the process. The agent remains responsive.
+### Running a Campaign
 
-**Resource limits:** Never run expand > 2 in production. Use `--no-research` for fast scans. Monitor with `free -m` and `ps aux --sort=-%mem | head -5`.
+```bash
+python3 -m gitgoblin.cli campaign run allaway-finland
+```
 
-## Operational discipline
+### Adding Fresh Seeds
 
-- Secrets only through environment variables/secrets manager.
-- Keep `data/`, HTTP caches and run artifacts out of git.
-- SQLite WAL is suitable for a single-node MVP. Move to Postgres/ClickHouse/graph storage only when measured volume requires it.
-- Back up the append-only observations before migrations.
-- Use bounded expansion; never recursively crawl the whole social graph by default.
-- Honor `Retry-After`/rate-limit reset headers and stop on persistent throttling.
+```bash
+python3 -m gitgoblin.cli campaign run allaway-finland --seed newaccount
+```
 
-## Definition of done
+---
 
-A change is done only when:
+## What GitGoblin Is NOT
 
-- code path is implemented,
-- tests exercise its success and relevant failure semantics,
-- full suite passes,
-- certification is regenerated,
-- docs/config/schema are updated if contracts changed.
+- ❌ Not a trending repo tracker
+- ❌ Not a star counter
+- ❌ Not a content scraper
+- ❌ Not a startup idea generator
+
+## What GitGoblin IS
+
+- ✅ Frontier-intelligence system
+- ✅ Convergence detector
+- ✅ Capability tracker
+- ✅ Product opportunity engine
+
+---
+
+## Rate Limits
+
+| Source | Limit | Strategy |
+|--------|-------|----------|
+| GitHub REST | 5,000/hr | Use token, cache aggressively |
+| GitHub GraphQL | 5,000 pts/hr | Batch queries |
+| OpenAlex | 10 req/sec | Polite pool |
+| arXiv | 1 req/3.5s | Required delay |
+
+---
+
+## Protected Processes
+
+**NEVER kill opencode processes.**
+
+The resource monitor (`scripts/resource_monitor.py`) tracks:
+- RAM usage (kill GitGoblin if > 85%)
+- CPU usage (kill GitGoblin if > 90%)
+
+---
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `configs/sectors/*.yaml` | Sector configurations |
+| `campaigns/*/config.yaml` | Campaign configurations |
+| `data/gitgoblin.db` | SQLite database |
+| `data/crawl_graph.json` | Visited repos/users/edges |
+| `logs/*.log` | Run logs |
+| `output/*.md` | Intelligence reports |
+
+---
+
+## MCP Tools
+
+| Tool | Description |
+|------|-------------|
+| `scan_sector` | Run a frontier scan |
+| `get_signals` | Get convergence signals |
+| `get_opportunities` | Get product opportunities |
+| `run_campaign` | Run a focused campaign |
+| `list_campaigns` | List all campaigns |
+| `add_seed` | Add a seed builder |
+| `search_entities` | Search repos/papers/developers |
+
+---
+
+*For agents, by agents.*

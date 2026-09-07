@@ -1,0 +1,64 @@
+created_at: '2026-09-07T13:00:00Z'
+description: "Norwegian maritime spare parts \u2014 analog suppliers, niche parts,\
+  \ no AI. Ships need spare parts constantly. Parts are niche, expensive, hard to\
+  \ identify. Suppliers are analog (phone, email, PDF). Nobody is building AI agents\
+  \ for this.\n"
+expansion:
+  expand_per_seed: 2
+  follow_quotes: true
+  follow_replies: true
+  max_depth: 3
+id: maritime-norway
+keywords:
+- maritime
+- spare part
+- hydraulic
+- HVAC marine
+- offshore
+- PDF catalog
+- phone ordering
+- impeller
+- pump
+- valve
+- sensor
+- controller
+- replacement
+- compatible
+- OEM
+- Norwegian
+last_run: '2026-09-07T13:22:26.890437+00:00'
+notes: 'Maritime suppliers are the most analog. They have:
+
+  - PDF catalogs (AKVA Group has 70-page PDFs)
+
+  - Phone/email ordering
+
+  - No digital compatibility graphs
+
+  - No agent integration
+
+  - Norwegian-language only
+
+
+  This is the prototype. Maritime spare parts in Norway.
+
+  The suppliers are analog, the parts are niche and expensive,
+
+  and nobody is building AI for this.
+
+  '
+seeds:
+- uqp_no
+- copra_no
+- framofpump
+- vesselcore_eu
+- maritimesupply
+- aeron_no
+status: ACTIVE
+thresholds:
+  build_threshold: 0.7
+  opportunity_score: 0.3
+  signal_score: 0.15
+total_observations: 0
+total_opportunities: 0
+total_signals: 0

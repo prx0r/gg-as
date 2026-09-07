@@ -132,6 +132,105 @@ def build_server(
             "watch_count": sum(1 for o in opps if o.decision == "WATCH"),
         })
 
+    @mcp.tool()
+    def run_campaign(campaign_id: str, fresh_seeds: list[str] | None = None) -> str:
+        """Run a focused rabbit-hole campaign. Resumes from where it left off."""
+        import yaml
+        from datetime import datetime
+        
+        campaign_path = config_root.parent / "campaigns" / campaign_id / "config.yaml"
+        if not campaign_path.exists():
+            return json.dumps({"error": f"Campaign not found: {campaign_id}"})
+        
+        with open(campaign_path) as f:
+            campaign = yaml.safe_load(f)
+        
+        # Add fresh seeds if provided
+        if fresh_seeds:
+            for seed in fresh_seeds:
+                if seed not in campaign['seeds']:
+                    campaign['seeds'].append(seed)
+        
+        # Create profile for this campaign
+        profile = SectorProfile(
+            id=campaign['id'],
+            description=campaign['description'],
+            seed_builders=campaign['seeds'],
+            keywords=campaign.get('keywords', []),
+            arxiv_queries=[],
+            rss_feeds=[],
+            ecosystems_repos=[],
+            expertise_languages=['python', 'typescript', 'rust'],
+            primitive_rules=campaign.get('primitive_rules', {}),
+        )
+        
+        # Run scan
+        result = Scout(store, settings, profile).run(
+            campaign['seeds'],
+            expand_per_seed=campaign.get('expansion', {}).get('expand_per_seed', 2),
+            research=False
+        )
+        
+        # Update campaign config
+        campaign['last_run'] = datetime.now(timezone.utc).isoformat()
+        campaign['total_observations'] = campaign.get('total_observations', 0) + result.observations_added
+        campaign['total_signals'] = campaign.get('total_signals', 0) + result.signals_added
+        campaign['total_opportunities'] = campaign.get('total_opportunities', 0) + result.opportunities_added
+        
+        with open(campaign_path, 'w') as f:
+            yaml.dump(campaign, f, default_flow_style=False)
+        
+        return json.dumps({
+            "campaign": campaign_id,
+            "observations_added": result.observations_added,
+            "signals_added": result.signals_added,
+            "opportunities_added": result.opportunities_added,
+            "total_observations": campaign['total_observations'],
+            "total_signals": campaign['total_signals'],
+        }, default=str)
+
+    @mcp.tool()
+    def list_campaigns() -> str:
+        """List all active campaigns."""
+        import yaml
+        campaigns_dir = config_root.parent / "campaigns"
+        if not campaigns_dir.exists():
+            return json.dumps({"campaigns": []})
+        
+        campaigns = []
+        for d in campaigns_dir.iterdir():
+            config_path = d / "config.yaml"
+            if config_path.exists():
+                with open(config_path) as f:
+                    campaign = yaml.safe_load(f)
+                campaigns.append({
+                    "id": campaign.get('id'),
+                    "description": campaign.get('description', '')[:80],
+                    "seeds": len(campaign.get('seeds', [])),
+                    "status": campaign.get('status', 'unknown'),
+                    "total_observations": campaign.get('total_observations', 0),
+                    "total_signals": campaign.get('total_signals', 0),
+                })
+        
+        return json.dumps({"campaigns": campaigns})
+
+    @mcp.tool()
+    def get_campaign_log(campaign_id: str) -> str:
+        """Get the run log for a campaign."""
+        log_dir = config_root.parent / "campaigns" / campaign_id
+        logs = sorted(log_dir.glob("run_*.json"))
+        
+        if not logs:
+            return json.dumps({"error": "No run logs found"})
+        
+        # Get last 5 runs
+        recent = []
+        for log_file in logs[-5:]:
+            with open(log_file) as f:
+                recent.append(json.load(f))
+        
+        return json.dumps({"campaign": campaign_id, "recent_runs": recent})
+
     return mcp
 
 

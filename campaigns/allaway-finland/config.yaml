@@ -1,0 +1,50 @@
+id: allaway-finland
+description: >
+  Allaway legacy central-vacuum parts for Finland.
+  250,000+ homes, decades of legacy systems, serial/model dependence.
+  Build the definitive compatibility graph + visual identification dataset.
+  Syndicate through Merchant Center and Shopify Catalog.
+
+# Seeds: Engineers solving the problems we need
+seeds:
+  # Compatibility / Parts / Spare Parts
+  - schemaorg        # Schema.org (isAccessoryOrSparePartFor)
+  - PartGrid         # If they have GitHub
+  
+  # Visual Product Identification
+  - google           # Google Lens / visual search
+  
+  # Merchant Center / Feed Optimization
+  - FeedArmy         # Emmanuel Flossie
+  - shopify          # Shopify Catalog
+  
+  # Nordic Commerce
+  - til_fabian       # Norwegian/Swedish SEO
+  
+  # Spare Parts / OEM
+  - husqvarna        # Automower parts (similar problem)
+
+keywords:
+  - compatibility
+  - spare part
+  - replacement
+  - OEM
+  - MPN
+  - supersession
+  - central vacuum
+  - Allaway
+  - Finnish
+  - installed base
+  - visual identification
+  - product graph
+  - Merchant Center
+  - related_product
+  - product_detail
+
+# Build the compatibility graph primitive
+primitive_rules:
+  compatibility-graph: [compatible, fit, part, model, serial, supersession, OEM, MPN]
+  visual-identification: [photo, image, vision, identify, recognize, match]
+  spare-parts: [spare, replacement, filter, bag, hose, inlet, receiver]
+  nordic-commerce: [Finnish, Norwegian, Swedish, Nordic, Scandinavian]
+  merchant-center: [feed, catalog, attribute, detail, question_and_answer, related_product]
