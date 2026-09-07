@@ -1,0 +1,187 @@
+# Agent Commerce Sector Configuration
+
+id: agent_commerce
+description: Agent-native commerce infrastructure — UCP, ACP, WebMCP, service marketplace, contractor AI, compatibility commerce
+
+seed_builders:
+  # === CORE (GitHub + X dual presence) ===
+  - igrigorik          # Ilya Grigorik — Shopify UCP/WebMCP
+  - gilgnyc            # Gil Greenberg — Shopify iMessage agent + UCP
+  - yoavweiss          # Yoav Weiss — Web standards/UCP/WebMCP
+  - jingyli            # Jing Li — Google Location search/serviceability
+  - lhwa               # Lee Hwa — Meta pricing provenance/feeds
+  - jalexspringer      # Alex Springer — OpenAttribution
+  - ge0ffrey           # Geoffrey De Smet — Timefold/OptaPlanner CTO
+  - georgeprobook      # George Eliadis — Probook founder
+  - alishazal          # Ali Shazal — Anthropic commerce-agents
+
+  # === X OPERATORS (signal, no public GitHub) ===
+  - Romain_Lapeyre     # Gorgias CEO — MCP adoption data
+  - kurtinc            # Ethercycle — Shopify transaction data
+  - til_fabian         # Independent — European SEO
+  - FredaDuan          # Independent — Agentic commerce analysis
+  - retailgeek         # — Retail tech
+  - aleyda             # — AEO/SEO
+  - iPullRank          # — SEO/AEO
+  - MenachemAni        # — Google Ads/Shopify
+  - AddiPPC            # — Google Ads/performance marketing
+  - PSH_Lewis          # Lewis Zhang — RAG/tool-use, Cohere
+
+  # === SERVICES / TRADIE OS ===
+  - thetysonchen       # Tyson Chen — Avoca AI
+  - apurvas96          # Apurva Shrivastava — Avoca AI
+  - toddlzt0           # Todd Li — Retell AI
+  - luckwi             # Guillaume Luccisano — Yuma AI
+  - WilsonCompanies    # John Wilson — home-services operator
+  - TheHVACJack        # Jack Carr — HVAC ground truth
+
+  # === AGENT COMMERCE INFRASTRUCTURE ===
+  - bryantchou         # Bryant Chou — Shopify → Ploy
+  - cyberandy          # Andrea Volpini — WordLift
+  - BranaRakic         # OriginTrail
+  - AdrianJohnst       # Elyos AI
+  - FerozeMohideen     # Robby CTO
+  - LucaHadife         # Kebra
+  - ndrewpignanelli    # Zero-person company
+
+  # === GOOGLE/SHOPIFY/STRIPE ===
+  - maximenajim        # Maxime Najim — Target/protocol
+  - VigneshSreedhar    # Meta — product identity
+  - ImranHoosain       # Etsy — UCP Shopping Tech Council
+  - PrasadWangikar     # Stripe — payment/checkout
+  - RyanKelly          # PayPal — product deep links
+  - PrateekSrivastava  # commercetools — inventory
+
+  # === ADDITIONAL HIDDEN GOATS ===
+  - rsynek             # Radovan Synek — Timefold routing
+  - triceo             # Lukáš Petrovický — Timefold solver
+
+ecosystems_repos:
+  # === 5 CORE REPOS ===
+  - Shopify/ucp-cli
+  - anthropics/commerce-agents
+  - gil--/ucp-agent-imessage
+  - NVIDIA-AI-Blueprints/Retail-Agentic-Commerce
+  - TimefoldAI/timefold-quickstarts
+
+  # === 8 WATCHING REPOS ===
+  - Universal-Commerce-Protocol/ucp
+  - agentic-commerce-protocol/agentic-commerce-protocol
+  - Accio-org/CommerceAgentBench
+  - Accio-org/BusinessArena
+  - agentcommercekit/ack
+  - openattribution-org/content-attribution-spec
+  - openattribution-org/openattribution
+
+  # === EXISTING INFRASTRUCTURE ===
+  - langchain-ai/langchain
+  - openai/openai-python
+  - huggingface/transformers
+  - modelcontextprotocol/python-sdk
+  - anthropics/anthropic-sdk-python
+
+keywords:
+  - agentic commerce
+  - agent-native
+  - UCP
+  - ACP
+  - WebMCP
+  - service marketplace
+  - tradie OS
+  - contractor AI
+  - EV installation
+  - heat pump installation
+  - compatibility commerce
+  - replacement parts
+  - local services
+  - agent SEO
+  - structured feeds
+  - product feeds
+  - machine-readable commerce
+  - agent checkout
+  - agent attribution
+  - location serviceability
+  - dispatch optimization
+  - field service scheduling
+  - recommendation ranking
+  - product discovery
+  - hard filter
+  - soft ranking
+  - eligibility gate
+  - agent attribution
+  - provenance
+  - freshness
+
+research_queries:
+  - UCP pull requests and issues
+  - ACP product feeds implementation
+  - WebMCP service discovery
+  - W3C commerce workshop
+  - Agent commerce infrastructure
+  - Service marketplace architecture
+  - Contractor AI receptionist
+  - Compatibility commerce
+  - Replacement parts marketplace
+  - Dispatch optimization
+  - Field service scheduling
+  - Recommendation ranking
+  - Product discovery
+  - Agent checkout
+  - Pricing provenance
+  - Attribution tracking
+
+arxiv_queries:
+  - agentic commerce
+  - product recommendation ranking
+  - field service dispatch optimization
+  - agent product discovery
+
+expertise_languages:
+  - python
+  - typescript
+  - sql
+  - yaml
+  - java
+  - go
+
+primitive_rules:
+  ucp_location_search:
+    - "Watch for PRs that add Location/Catalog/Cart/Checkout capabilities"
+    - "Score when Location search includes serviceability filters"
+    - "Score when Location search adds service-area/distance filtering"
+  acp_product_feeds:
+    - "Watch for new agent-related fields in product feeds"
+    - "Score when feeds include freshness/provenance metadata"
+    - "Score when feeds add agent-specific attributes"
+  webmcp_service:
+    - "Watch for serviceability/service-search primitives"
+    - "Score when service discovery becomes machine-readable"
+    - "Score when service availability becomes structured"
+  attribution_tracking:
+    - "Watch for attribution/content-retrieval tracking"
+    - "Score when agent decisions become traceable"
+    - "Score when content citations are recorded"
+  price_provenance:
+    - "Watch for price-provenance/freshness mechanisms"
+    - "Score when price freshness becomes first-class"
+    - "Score when price conflict resolution is explicit"
+  google_shopify_convergence:
+    - "Score heavily when Google + Shopify agree on a primitive"
+    - "Look for Location + Catalog alignment"
+  meta_independent:
+    - "Score heavily when Meta independently implements same primitive"
+    - "Look for pricing provenance in ACP"
+  independent_implementation:
+    - "Score heavily when independent implementation appears"
+    - "Look for non-Google/Shopify implementations of same primitives"
+  dispatch_optimization:
+    - "Watch for field-service scheduling/solver improvements"
+    - "Score when dispatch objective functions change"
+    - "Score when constraint weights or eligibility rules change"
+  recommendation_ranking:
+    - "Watch for ranking function changes in retail recommenders"
+    - "Score when hard filter vs soft ranking semantics change"
+    - "Score when agent-facing catalog instructions change"
+  agent_checkout:
+    - "Watch for agent checkout capability changes"
+    - "Score when authorization or purchase completion flows change"
