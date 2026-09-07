@@ -231,6 +231,26 @@ def build_server(
         
         return json.dumps({"campaign": campaign_id, "recent_runs": recent})
 
+    @mcp.tool()
+    def parse_intent(dirty_intent: str) -> str:
+        """Parse a dirty intent into structured campaign data."""
+        from .intent_engine import parse_intent as parse
+        
+        intent = parse(dirty_intent)
+        return json.dumps(intent, indent=2)
+
+    @mcp.tool()
+    def analyze_with_ai(signal_data: str) -> str:
+        """Use Cloudflare AI to analyze a signal."""
+        from .cloudflare_ai import cloudflare_ai
+        
+        try:
+            data = json.loads(signal_data)
+            result = cloudflare_ai.analyze_signal(data)
+            return json.dumps(result, indent=2)
+        except Exception as e:
+            return json.dumps({"error": str(e)})
+
     return mcp
 
 
