@@ -1,0 +1,18 @@
+Seeds: 6 accounts
+Min signal score: 0.15
+Pages per seed: 2
+
+Starting deep rabbit hole scan...
+This will take a few minutes...
+
+Scan complete!
+Observations: 3465
+Signals: 2
+Opportunities: 5
+
+=== ALL SIGNALS (5) ===
+  github:repo:tobi/walgit: alpha=0.911, experts=2, confidence=0.687
+  github:repo:shopify/ucp-cli: alpha=0.902, experts=2, confidence=0.687
+  github:repo:universal-commerce-protocol/ucp: alpha=0.716, experts=3, confidence=0.747
+  github:repo:universal-commerce-protocol/ucp: alpha=0.650, experts=2, confidence=0.687
+  github:repo:jingyli/ucp: alpha=0.548, experts=2, confidence=0.687
