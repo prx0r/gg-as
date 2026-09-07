@@ -1,0 +1,237 @@
+{
+  "timestamp": "2026-09-07T16:03:29.756520",
+  "intent": "Rank #1 in Google AI results for Norwegian spare parts",
+  "seeds": [
+    "igrigorik",
+    "gil--",
+    "tobi",
+    "yoavweiss",
+    "simonw",
+    "jxnl"
+  ],
+  "observations": 4391,
+  "convergences": 61,
+  "top_convergences": [
+    {
+      "repo": "boundaryml/baml",
+      "starrers": [
+        "gil--",
+        "tobi",
+        "simonw"
+      ],
+      "starrer_count": 3,
+      "first_seen": "2026-09-07",
+      "info": {
+        "description": "Programming language for agents",
+        "stars": 9146,
+        "relevance": "MEDIUM"
+      }
+    },
+    {
+      "repo": "prefecthq/marvin",
+      "starrers": [
+        "gil--",
+        "bborn",
+        "jxnl"
+      ],
+      "starrer_count": 3,
+      "first_seen": "2026-09-07T16:03:21.997104+00:00",
+      "info": {}
+    },
+    {
+      "repo": "567-labs/instructor",
+      "starrers": [
+        "bborn",
+        "thmsmlr",
+        "jxnl"
+      ],
+      "starrer_count": 3,
+      "first_seen": "2026-09-07T16:03:21.997126+00:00",
+      "info": {}
+    },
+    {
+      "repo": "openai/codex",
+      "starrers": [
+        "gil--",
+        "thmsmlr",
+        "jxnl"
+      ],
+      "starrer_count": 3,
+      "first_seen": "2026-09-07T16:03:21.997362+00:00",
+      "info": {}
+    },
+    {
+      "repo": "pydantic/monty",
+      "starrers": [
+        "simonw",
+        "tobi",
+        "jxnl"
+      ],
+      "starrer_count": 3,
+      "first_seen": "2026-09-07T16:03:21.997605+00:00",
+      "info": {}
+    },
+    {
+      "repo": "universal-commerce-protocol/ucp",
+      "starrers": [
+        "igrigorik",
+        "gil--"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07",
+      "info": {
+        "description": "Commerce protocol",
+        "stars": 3358,
+        "relevance": "HIGH"
+      }
+    },
+    {
+      "repo": "stanfordnlp/dspy",
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07",
+      "info": {
+        "description": "Programming LLMs",
+        "stars": 37825,
+        "relevance": "MEDIUM"
+      }
+    },
+    {
+      "repo": "opencode-ai/opencode",
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07",
+      "info": {
+        "description": "AI coding agent",
+        "stars": 13725,
+        "relevance": "MEDIUM"
+      }
+    },
+    {
+      "repo": "play/play",
+      "starrers": [
+        "defunkt",
+        "mojombo"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996596+00:00",
+      "info": {}
+    },
+    {
+      "repo": "resume/resume.github.com",
+      "starrers": [
+        "defunkt",
+        "colah"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996677+00:00",
+      "info": {}
+    },
+    {
+      "repo": "yhat/ggpy",
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996699+00:00",
+      "info": {}
+    },
+    {
+      "repo": "technopagan/cjpeg-dssim",
+      "starrers": [
+        "igrigorik",
+        "yoavweiss"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996723+00:00",
+      "info": {}
+    },
+    {
+      "repo": "typicode/json-server",
+      "starrers": [
+        "igrigorik",
+        "defunkt"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996752+00:00",
+      "info": {}
+    },
+    {
+      "repo": "leahneukirchen/nq",
+      "starrers": [
+        "igrigorik",
+        "tobi"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996774+00:00",
+      "info": {}
+    },
+    {
+      "repo": "tensorflow/tensorflow",
+      "starrers": [
+        "macournoyer",
+        "colah"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996793+00:00",
+      "info": {}
+    },
+    {
+      "repo": "stitchfix/fauxtograph",
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996810+00:00",
+      "info": {}
+    },
+    {
+      "repo": "dgrtwo/fuzzyjoin",
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996833+00:00",
+      "info": {}
+    },
+    {
+      "repo": "rgcr/m-cli",
+      "starrers": [
+        "igrigorik",
+        "thmsmlr"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996849+00:00",
+      "info": {}
+    },
+    {
+      "repo": "netdata/netdata",
+      "starrers": [
+        "igrigorik",
+        "tobi"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996867+00:00",
+      "info": {}
+    },
+    {
+      "repo": "mermaid-js/mermaid",
+      "starrers": [
+        "igrigorik",
+        "simonw"
+      ],
+      "starrer_count": 2,
+      "first_seen": "2026-09-07T16:03:21.996883+00:00",
+      "info": {}
+    }
+  ]
+}

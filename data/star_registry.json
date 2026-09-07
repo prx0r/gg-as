@@ -31,9 +31,12 @@
       }
     },
     "universal-commerce-protocol/ucp": {
-      "starrers": [],
+      "starrers": [
+        "igrigorik",
+        "gil--"
+      ],
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-07T16:03:21.997594+00:00",
       "info": {
         "description": "Commerce protocol",
         "stars": 3358,
@@ -51,9 +54,12 @@
       }
     },
     "stanfordnlp/dspy": {
-      "starrers": [],
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-07T16:03:21.997220+00:00",
       "info": {
         "description": "Programming LLMs",
         "stars": 37825,
@@ -61,9 +67,13 @@
       }
     },
     "boundaryml/baml": {
-      "starrers": [],
+      "starrers": [
+        "gil--",
+        "tobi",
+        "simonw"
+      ],
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-07T16:03:21.997430+00:00",
       "info": {
         "description": "Programming language for agents",
         "stars": 9146,
@@ -71,9 +81,12 @@
       }
     },
     "opencode-ai/opencode": {
-      "starrers": [],
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-07T16:03:21.997400+00:00",
       "info": {
         "description": "AI coding agent",
         "stars": 13725,
@@ -89,9 +102,682 @@
         "stars": 39,
         "relevance": "HIGH"
       }
+    },
+    "play/play": {
+      "starrers": [
+        "defunkt",
+        "mojombo"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996596+00:00",
+      "last_seen": "2026-09-07T16:03:21.996635+00:00",
+      "info": {}
+    },
+    "resume/resume.github.com": {
+      "starrers": [
+        "defunkt",
+        "colah"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996677+00:00",
+      "last_seen": "2026-09-07T16:03:21.996690+00:00",
+      "info": {}
+    },
+    "yhat/ggpy": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996699+00:00",
+      "last_seen": "2026-09-07T16:03:21.996711+00:00",
+      "info": {}
+    },
+    "technopagan/cjpeg-dssim": {
+      "starrers": [
+        "igrigorik",
+        "yoavweiss"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996723+00:00",
+      "last_seen": "2026-09-07T16:03:21.996737+00:00",
+      "info": {}
+    },
+    "typicode/json-server": {
+      "starrers": [
+        "igrigorik",
+        "defunkt"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996752+00:00",
+      "last_seen": "2026-09-07T16:03:21.996764+00:00",
+      "info": {}
+    },
+    "leahneukirchen/nq": {
+      "starrers": [
+        "igrigorik",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996774+00:00",
+      "last_seen": "2026-09-07T16:03:21.996785+00:00",
+      "info": {}
+    },
+    "tensorflow/tensorflow": {
+      "starrers": [
+        "macournoyer",
+        "colah"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996793+00:00",
+      "last_seen": "2026-09-07T16:03:21.996804+00:00",
+      "info": {}
+    },
+    "stitchfix/fauxtograph": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996810+00:00",
+      "last_seen": "2026-09-07T16:03:21.996821+00:00",
+      "info": {}
+    },
+    "dgrtwo/fuzzyjoin": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996833+00:00",
+      "last_seen": "2026-09-07T16:03:21.996843+00:00",
+      "info": {}
+    },
+    "rgcr/m-cli": {
+      "starrers": [
+        "igrigorik",
+        "thmsmlr"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996849+00:00",
+      "last_seen": "2026-09-07T16:03:21.996859+00:00",
+      "info": {}
+    },
+    "netdata/netdata": {
+      "starrers": [
+        "igrigorik",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996867+00:00",
+      "last_seen": "2026-09-07T16:03:21.996877+00:00",
+      "info": {}
+    },
+    "mermaid-js/mermaid": {
+      "starrers": [
+        "igrigorik",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996883+00:00",
+      "last_seen": "2026-09-07T16:03:21.996893+00:00",
+      "info": {}
+    },
+    "robinhood/faust": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996908+00:00",
+      "last_seen": "2026-09-07T16:03:21.996919+00:00",
+      "info": {}
+    },
+    "home-assistant/core": {
+      "starrers": [
+        "mojombo",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996925+00:00",
+      "last_seen": "2026-09-07T16:03:21.996934+00:00",
+      "info": {}
+    },
+    "fastapi/fastapi": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996942+00:00",
+      "last_seen": "2026-09-07T16:03:21.996952+00:00",
+      "info": {}
+    },
+    "codex-team/editor.js": {
+      "starrers": [
+        "gil--",
+        "bborn"
+      ],
+      "first_seen": "2026-09-07T16:03:21.996957+00:00",
+      "last_seen": "2026-09-07T16:03:21.996983+00:00",
+      "info": {}
+    },
+    "facebook/lexical": {
+      "starrers": [
+        "gil--",
+        "akdarrah"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997001+00:00",
+      "last_seen": "2026-09-07T16:03:21.997011+00:00",
+      "info": {}
+    },
+    "leerob/next-mdx-blog": {
+      "starrers": [
+        "gil--",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997030+00:00",
+      "last_seen": "2026-09-07T16:03:21.997040+00:00",
+      "info": {}
+    },
+    "emilkowalski/sonner": {
+      "starrers": [
+        "gil--",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997044+00:00",
+      "last_seen": "2026-09-07T16:03:21.997054+00:00",
+      "info": {}
+    },
+    "apache/hamilton": {
+      "starrers": [
+        "tobi",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997060+00:00",
+      "last_seen": "2026-09-07T16:03:21.997069+00:00",
+      "info": {}
+    },
+    "thmsmlr/gpt.nvim": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997074+00:00",
+      "last_seen": "2026-09-07T16:03:21.997083+00:00",
+      "info": {}
+    },
+    "ggml-org/llama.cpp": {
+      "starrers": [
+        "sethfitz",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997088+00:00",
+      "last_seen": "2026-09-07T16:03:21.997098+00:00",
+      "info": {}
+    },
+    "prefecthq/marvin": {
+      "starrers": [
+        "gil--",
+        "bborn",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997104+00:00",
+      "last_seen": "2026-09-07T16:03:21.997118+00:00",
+      "info": {}
+    },
+    "567-labs/instructor": {
+      "starrers": [
+        "bborn",
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997126+00:00",
+      "last_seen": "2026-09-07T16:03:21.997140+00:00",
+      "info": {}
+    },
+    "squidfunk/mkdocs-material": {
+      "starrers": [
+        "simonw",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997148+00:00",
+      "last_seen": "2026-09-07T16:03:21.997157+00:00",
+      "info": {}
+    },
+    "oldmoe/litestack": {
+      "starrers": [
+        "bborn",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997163+00:00",
+      "last_seen": "2026-09-07T16:03:21.997173+00:00",
+      "info": {}
+    },
+    "rustdesk/rustdesk": {
+      "starrers": [
+        "mojombo",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997178+00:00",
+      "last_seen": "2026-09-07T16:03:21.997188+00:00",
+      "info": {}
+    },
+    "thmsmlr/instructor_ex": {
+      "starrers": [
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997197+00:00",
+      "last_seen": "2026-09-07T16:03:21.997207+00:00",
+      "info": {}
+    },
+    "janhq/jan": {
+      "starrers": [
+        "tobi",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997228+00:00",
+      "last_seen": "2026-09-07T16:03:21.997238+00:00",
+      "info": {}
+    },
+    "chroxify/haptic": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997256+00:00",
+      "last_seen": "2026-09-07T16:03:21.997265+00:00",
+      "info": {}
+    },
+    "microsoft/markitdown": {
+      "starrers": [
+        "igrigorik",
+        "mojombo"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997271+00:00",
+      "last_seen": "2026-09-07T16:03:21.997282+00:00",
+      "info": {}
+    },
+    "nautechsystems/nautilus_trader": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997286+00:00",
+      "last_seen": "2026-09-07T16:03:21.997296+00:00",
+      "info": {}
+    },
+    "thepersonalaicompany/amurex": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997301+00:00",
+      "last_seen": "2026-09-07T16:03:21.997311+00:00",
+      "info": {}
+    },
+    "lightdash/lightdash": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997316+00:00",
+      "last_seen": "2026-09-07T16:03:21.997328+00:00",
+      "info": {}
+    },
+    "crmne/ruby_llm": {
+      "starrers": [
+        "macournoyer",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997334+00:00",
+      "last_seen": "2026-09-07T16:03:21.997344+00:00",
+      "info": {}
+    },
+    "supermemoryai/supermemory": {
+      "starrers": [
+        "macournoyer",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997348+00:00",
+      "last_seen": "2026-09-07T16:03:21.997358+00:00",
+      "info": {}
+    },
+    "openai/codex": {
+      "starrers": [
+        "gil--",
+        "thmsmlr",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997362+00:00",
+      "last_seen": "2026-09-07T16:03:21.997376+00:00",
+      "info": {}
+    },
+    "x1xhlol/system-prompts-and-models-of-ai-tools": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997381+00:00",
+      "last_seen": "2026-09-07T16:03:21.997391+00:00",
+      "info": {}
+    },
+    "plexe-ai/plexe": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997404+00:00",
+      "last_seen": "2026-09-07T16:03:21.997414+00:00",
+      "info": {}
+    },
+    "anomalyco/opencode": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997440+00:00",
+      "last_seen": "2026-09-07T16:03:21.997450+00:00",
+      "info": {}
+    },
+    "openai/harmony": {
+      "starrers": [
+        "gil--",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997456+00:00",
+      "last_seen": "2026-09-07T16:03:21.997469+00:00",
+      "info": {}
+    },
+    "obra/superpowers": {
+      "starrers": [
+        "sethfitz",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997484+00:00",
+      "last_seen": "2026-09-07T16:03:21.997498+00:00",
+      "info": {}
+    },
+    "microsoft/amplifier": {
+      "starrers": [
+        "sethfitz",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997504+00:00",
+      "last_seen": "2026-09-07T16:03:21.997516+00:00",
+      "info": {}
+    },
+    "tobi/qmd": {
+      "starrers": [
+        "macournoyer",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997528+00:00",
+      "last_seen": "2026-09-07T16:03:21.997540+00:00",
+      "info": {}
+    },
+    "dicklesworthstone/beads_viewer": {
+      "starrers": [
+        "sethfitz",
+        "macournoyer"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997546+00:00",
+      "last_seen": "2026-09-07T16:03:21.997559+00:00",
+      "info": {}
+    },
+    "alexzhang13/rlm": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997567+00:00",
+      "last_seen": "2026-09-07T16:03:21.997580+00:00",
+      "info": {}
+    },
+    "pydantic/monty": {
+      "starrers": [
+        "simonw",
+        "tobi",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997605+00:00",
+      "last_seen": "2026-09-07T16:03:21.997624+00:00",
+      "info": {}
+    },
+    "amlalabs/amla-sandbox": {
+      "starrers": [
+        "tobi",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997630+00:00",
+      "last_seen": "2026-09-07T16:03:21.997643+00:00",
+      "info": {}
+    },
+    "lynaghk/vibe": {
+      "starrers": [
+        "tobi",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997649+00:00",
+      "last_seen": "2026-09-07T16:03:21.997662+00:00",
+      "info": {}
+    },
+    "antirez/voxtral.c": {
+      "starrers": [
+        "sethfitz",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997670+00:00",
+      "last_seen": "2026-09-07T16:03:21.997680+00:00",
+      "info": {}
+    },
+    "manaflow-ai/cmux": {
+      "starrers": [
+        "sethfitz",
+        "macournoyer"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997690+00:00",
+      "last_seen": "2026-09-07T16:03:21.997701+00:00",
+      "info": {}
+    },
+    "googleworkspace/cli": {
+      "starrers": [
+        "sethfitz",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997709+00:00",
+      "last_seen": "2026-09-07T16:03:21.997719+00:00",
+      "info": {}
+    },
+    "eugene1g/agent-safehouse": {
+      "starrers": [
+        "macournoyer",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997725+00:00",
+      "last_seen": "2026-09-07T16:03:21.997735+00:00",
+      "info": {}
+    },
+    "rivet-dev/dynamic-apps": {
+      "starrers": [
+        "tobi",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997742+00:00",
+      "last_seen": "2026-09-07T16:03:21.997753+00:00",
+      "info": {}
+    },
+    "run-llama/liteparse": {
+      "starrers": [
+        "sethfitz",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997764+00:00",
+      "last_seen": "2026-09-07T16:03:21.997775+00:00",
+      "info": {}
+    },
+    "prime-radiant-inc/engineering-notebook": {
+      "starrers": [
+        "sethfitz",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997780+00:00",
+      "last_seen": "2026-09-07T16:03:21.997790+00:00",
+      "info": {}
+    },
+    "herdrdev/herdr": {
+      "starrers": [
+        "macournoyer",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T16:03:21.997798+00:00",
+      "last_seen": "2026-09-07T16:03:21.997809+00:00",
+      "info": {}
     }
   },
-  "developers": {},
+  "developers": {
+    "defunkt": [
+      "play/play",
+      "resume/resume.github.com",
+      "typicode/json-server"
+    ],
+    "mojombo": [
+      "play/play",
+      "home-assistant/core",
+      "rustdesk/rustdesk",
+      "microsoft/markitdown"
+    ],
+    "colah": [
+      "resume/resume.github.com",
+      "tensorflow/tensorflow"
+    ],
+    "thmsmlr": [
+      "yhat/ggpy",
+      "stitchfix/fauxtograph",
+      "dgrtwo/fuzzyjoin",
+      "rgcr/m-cli",
+      "robinhood/faust",
+      "fastapi/fastapi",
+      "thmsmlr/gpt.nvim",
+      "567-labs/instructor",
+      "thmsmlr/instructor_ex",
+      "openai/codex"
+    ],
+    "jxnl": [
+      "yhat/ggpy",
+      "stitchfix/fauxtograph",
+      "dgrtwo/fuzzyjoin",
+      "robinhood/faust",
+      "home-assistant/core",
+      "fastapi/fastapi",
+      "leerob/next-mdx-blog",
+      "emilkowalski/sonner",
+      "apache/hamilton",
+      "thmsmlr/gpt.nvim",
+      "ggml-org/llama.cpp",
+      "prefecthq/marvin",
+      "567-labs/instructor",
+      "squidfunk/mkdocs-material",
+      "thmsmlr/instructor_ex",
+      "openai/codex",
+      "pydantic/monty"
+    ],
+    "igrigorik": [
+      "technopagan/cjpeg-dssim",
+      "typicode/json-server",
+      "leahneukirchen/nq",
+      "rgcr/m-cli",
+      "netdata/netdata",
+      "mermaid-js/mermaid",
+      "microsoft/markitdown",
+      "universal-commerce-protocol/ucp"
+    ],
+    "yoavweiss": [
+      "technopagan/cjpeg-dssim"
+    ],
+    "tobi": [
+      "leahneukirchen/nq",
+      "netdata/netdata",
+      "apache/hamilton",
+      "oldmoe/litestack",
+      "rustdesk/rustdesk",
+      "stanfordnlp/dspy",
+      "janhq/jan",
+      "chroxify/haptic",
+      "nautechsystems/nautilus_trader",
+      "thepersonalaicompany/amurex",
+      "lightdash/lightdash",
+      "crmne/ruby_llm",
+      "supermemoryai/supermemory",
+      "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "opencode-ai/opencode",
+      "plexe-ai/plexe",
+      "boundaryml/baml",
+      "anomalyco/opencode",
+      "tobi/qmd",
+      "alexzhang13/rlm",
+      "pydantic/monty",
+      "amlalabs/amla-sandbox",
+      "lynaghk/vibe",
+      "rivet-dev/dynamic-apps",
+      "herdrdev/herdr"
+    ],
+    "macournoyer": [
+      "tensorflow/tensorflow",
+      "crmne/ruby_llm",
+      "supermemoryai/supermemory",
+      "tobi/qmd",
+      "dicklesworthstone/beads_viewer",
+      "manaflow-ai/cmux",
+      "eugene1g/agent-safehouse",
+      "herdrdev/herdr"
+    ],
+    "simonw": [
+      "mermaid-js/mermaid",
+      "squidfunk/mkdocs-material",
+      "janhq/jan",
+      "boundaryml/baml",
+      "openai/harmony",
+      "obra/superpowers",
+      "microsoft/amplifier",
+      "pydantic/monty",
+      "amlalabs/amla-sandbox",
+      "lynaghk/vibe",
+      "antirez/voxtral.c",
+      "googleworkspace/cli",
+      "eugene1g/agent-safehouse",
+      "rivet-dev/dynamic-apps",
+      "run-llama/liteparse",
+      "prime-radiant-inc/engineering-notebook"
+    ],
+    "gil--": [
+      "codex-team/editor.js",
+      "facebook/lexical",
+      "leerob/next-mdx-blog",
+      "emilkowalski/sonner",
+      "prefecthq/marvin",
+      "stanfordnlp/dspy",
+      "chroxify/haptic",
+      "nautechsystems/nautilus_trader",
+      "thepersonalaicompany/amurex",
+      "lightdash/lightdash",
+      "openai/codex",
+      "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "opencode-ai/opencode",
+      "plexe-ai/plexe",
+      "boundaryml/baml",
+      "anomalyco/opencode",
+      "openai/harmony",
+      "alexzhang13/rlm",
+      "universal-commerce-protocol/ucp"
+    ],
+    "bborn": [
+      "codex-team/editor.js",
+      "prefecthq/marvin",
+      "567-labs/instructor",
+      "oldmoe/litestack"
+    ],
+    "akdarrah": [
+      "facebook/lexical"
+    ],
+    "sethfitz": [
+      "ggml-org/llama.cpp",
+      "obra/superpowers",
+      "microsoft/amplifier",
+      "dicklesworthstone/beads_viewer",
+      "antirez/voxtral.c",
+      "manaflow-ai/cmux",
+      "googleworkspace/cli",
+      "run-llama/liteparse",
+      "prime-radiant-inc/engineering-notebook"
+    ]
+  },
   "convergences": [],
-  "last_updated": "2026-09-07T16:00:01.828492+00:00"
+  "last_updated": "2026-09-07T16:03:21.998016+00:00"
 }
