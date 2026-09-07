@@ -57,23 +57,53 @@ seed_builders:
   - triceo             # Lukáš Petrovický — Timefold solver
 
 ecosystems_repos:
-  # === 5 CORE REPOS ===
+  # === SHOPIFY UCP ===
   - Shopify/ucp-cli
+  - Shopify/ucp
+  - Shopify/shop-chat-agent
+  - Shopify/claude-for-commerce-examples
+
+  # === COMMERCE AGENTS ===
   - anthropics/commerce-agents
   - gil--/ucp-agent-imessage
-  - NVIDIA-AI-Blueprints/Retail-Agentic-Commerce
+
+  # === VOICE / CONVERSATIONAL ===
+  - livekit/agents
+  - livekit-examples/python-agents-examples
+  - livekit/sip
+  - pipecat-ai/pipecat
+  - bolna-ai/bolna
+  - TEN-framework/ten-framework
+
+  # === DISPATCH / OPTIMIZATION ===
+  - TimefoldAI/timefold-solver
   - TimefoldAI/timefold-quickstarts
 
-  # === 8 WATCHING REPOS ===
-  - Universal-Commerce-Protocol/ucp
-  - agentic-commerce-protocol/agentic-commerce-protocol
+  # === PAYMENTS / CHECKOUT ===
+  - vercel/acp-handler
+  - paypal/agent-toolkit
+  - stripe/ai
+
+  # === EVALUATION / BENCHMARKS ===
+  - arenza-ai/agentic-commerce-score
   - Accio-org/CommerceAgentBench
   - Accio-org/BusinessArena
-  - agentcommercekit/ack
+
+  # === SERVICE OS ===
+  - codewithmuh/hearthline
+  - daydreamsai/lucid-agents
+
+  # === ATTRIBUTION / PROVENANCE ===
   - openattribution-org/content-attribution-spec
   - openattribution-org/openattribution
 
-  # === EXISTING INFRASTRUCTURE ===
+  # === SERVICE DIRECTORIES ===
+  - openreferral/specification
+
+  # === INFRASTRUCTURE ===
+  - Universal-Commerce-Protocol/ucp
+  - agentic-commerce-protocol/agentic-commerce-protocol
+  - agentcommercekit/ack
   - langchain-ai/langchain
   - openai/openai-python
   - huggingface/transformers
