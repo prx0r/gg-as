@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from pathlib import Path
 
 import uvicorn
@@ -45,6 +46,11 @@ def main() -> None:
     p_mission.add_argument("text", nargs="+", help="Mission description")
     p_mission.add_argument("--save", action="store_true", help="Save as campaign config")
     
+    p_campaign = sub.add_parser("campaign", help="Campaign management")
+    p_campaign.add_argument("action", choices=["run", "list", "log"], help="Campaign action")
+    p_campaign.add_argument("campaign_id", nargs="?", help="Campaign ID")
+    p_campaign.add_argument("--seed", action="append", default=[], help="Add fresh seeds")
+    
     p_modes = sub.add_parser("modes", help="List available scan modes")
 
     p_rank = sub.add_parser("rank", help="Show current signals")
@@ -80,7 +86,6 @@ def main() -> None:
     elif args.cmd == "scan":
         from .scan_modes import get_mode
         from .experiment_logger import experiment_logger
-        import time
         
         mode = get_mode(args.mode)
         profile = _profile(root, args.sector)
@@ -131,6 +136,103 @@ def main() -> None:
             print()
         
         print(json.dumps(config, indent=2))
+    
+    elif args.cmd == "campaign":
+        import yaml
+        from datetime import datetime, timezone
+        
+        campaigns_dir = Path(args.config_root).parent / "campaigns"
+        
+        if args.action == "list":
+            if not campaigns_dir.exists():
+                print("No campaigns found")
+                return
+            
+            print(f"{'ID':<50} {'Status':<12} {'Seeds':<8} {'Signals':<10}")
+            print("-" * 85)
+            for d in campaigns_dir.iterdir():
+                config_path = d / "config.yaml"
+                if config_path.exists():
+                    with open(config_path) as f:
+                        campaign = yaml.safe_load(f)
+                    print(f"{campaign.get('id', ''):<50} {campaign.get('status', ''):<12} {len(campaign.get('seeds', [])):<8} {campaign.get('total_signals', 0):<10}")
+        
+        elif args.action == "run":
+            if not args.campaign_id:
+                print("Error: campaign_id required")
+                return
+            
+            config_path = campaigns_dir / args.campaign_id / "config.yaml"
+            if not config_path.exists():
+                print(f"Campaign not found: {args.campaign_id}")
+                return
+            
+            with open(config_path) as f:
+                campaign = yaml.safe_load(f)
+            
+            # Add fresh seeds
+            if args.seed:
+                for seed in args.seed:
+                    if seed not in campaign['seeds']:
+                        campaign['seeds'].append(seed)
+            
+            # Create profile
+            profile = SectorProfile(
+                id=campaign['id'],
+                description=campaign['description'],
+                seed_builders=campaign['seeds'],
+                keywords=campaign.get('keywords', []),
+                arxiv_queries=[],
+                rss_feeds=[],
+                ecosystems_repos=[],
+                expertise_languages=['python', 'typescript'],
+                primitive_rules=campaign.get('primitive_rules', {}),
+            )
+            
+            # Run scan
+            settings = AppSettings.load()
+            settings.scoring.min_signal_score = campaign.get('thresholds', {}).get('signal_score', 0.15)
+            store = Store(settings.database_path)
+            
+            start_time = time.time()
+            run = Scout(store, settings, profile).run(
+                campaign['seeds'],
+                expand_per_seed=campaign.get('expansion', {}).get('expand_per_seed', 2),
+                research=False
+            )
+            duration = time.time() - start_time
+            
+            # Update campaign
+            campaign['last_run'] = datetime.now(timezone.utc).isoformat()
+            campaign['total_observations'] = campaign.get('total_observations', 0) + run.observations_added
+            campaign['total_signals'] = campaign.get('total_signals', 0) + run.signals_added
+            
+            with open(config_path, 'w') as f:
+                yaml.dump(campaign, f, default_flow_style=False)
+            
+            print(f"Campaign: {args.campaign_id}")
+            print(f"Observations: {run.observations_added}")
+            print(f"Signals: {run.signals_added}")
+            print(f"Duration: {duration:.1f}s")
+            print(f"Total observations: {campaign['total_observations']}")
+        
+        elif args.action == "log":
+            if not args.campaign_id:
+                print("Error: campaign_id required")
+                return
+            
+            log_dir = campaigns_dir / args.campaign_id
+            logs = sorted(log_dir.glob("run_*.json"))
+            
+            if not logs:
+                print("No run logs found")
+                return
+            
+            print(f"=== Campaign: {args.campaign_id} ===")
+            for log_file in logs[-5:]:
+                with open(log_file) as f:
+                    log_data = json.load(f)
+                print(f"  {log_file.name}: {log_data.get('observations', 0)} obs, {log_data.get('signals', 0)} signals")
     
     elif args.cmd == "modes":
         from .scan_modes import list_modes
