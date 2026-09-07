@@ -35,8 +35,10 @@ def main() -> None:
     p_scan = sub.add_parser("scan", help="Run a live bounded scan")
     p_scan.add_argument("sector")
     p_scan.add_argument("--seed", action="append", default=[])
-    p_scan.add_argument("--expand", type=int, default=2)
+    p_scan.add_argument("--expand", type=int, default=1)
     p_scan.add_argument("--no-research", action="store_true")
+    p_scan.add_argument("--mode", choices=["quick", "thorough", "full"], default="quick",
+                       help="quick=GitHub+arXiv only, thorough=+OpenAlex+HN, full=everything")
 
     p_rank = sub.add_parser("rank", help="Show current signals")
     p_rank.add_argument("--sector")
@@ -63,8 +65,28 @@ def main() -> None:
         print(json.dumps({"sector": args.sector, "seeds": store.seeds(args.sector)}, indent=2))
     elif args.cmd == "scan":
         profile = _profile(root, args.sector)
+        
+        # Mode-based configuration
+        if args.mode == "quick":
+            # Quick: GitHub + arXiv only, skip OpenAlex/HN/RSS/Ecosystems
+            settings.rate_limits["github"] = 0.5  # Faster with token
+            research = False  # Skip arXiv for speed
+            expand = min(args.expand, 2)
+        elif args.mode == "thorough":
+            # Thorough: GitHub + arXiv + OpenAlex
+            settings.rate_limits["github"] = 0.75
+            research = True
+            expand = min(args.expand, 3)
+        else:  # full
+            # Full: everything
+            settings.rate_limits["github"] = 0.75
+            research = True
+            expand = min(args.expand, 5)
+        
+        print(f"Mode: {args.mode} | Expand: {expand} | Research: {research}")
+        
         run = Scout(store, settings, profile).run(
-            args.seed or None, expand_per_seed=max(0, min(args.expand, 10)), research=not args.no_research
+            args.seed or None, expand_per_seed=expand, research=research and not args.no_research
         )
         print(run.model_dump_json(indent=2))
     elif args.cmd == "rank":

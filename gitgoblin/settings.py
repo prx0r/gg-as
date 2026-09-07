@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 class GitHubSettings(BaseModel):
     token_env: str = "GITHUB_TOKEN"
     api_version: str = "2026-03-10"
-    pages_per_seed: int = 2
+    pages_per_seed: int = 1  # Reduced for faster scans
     include_following: bool = True
     include_starred: bool = True
     include_events: bool = True
@@ -50,7 +50,7 @@ class AppSettings(BaseModel):
     github: GitHubSettings = Field(default_factory=GitHubSettings)
     scoring: ScoreSettings = Field(default_factory=ScoreSettings)
     rate_limits: dict[str, float] = Field(default_factory=lambda: {
-        "github": 3.0,       # 1 req per 3s (authenticated: 5000/hr)
+        "github": 0.75,      # 1 req per 0.75s (authenticated: ~4,800/hr, safe margin)
         "openalex": 0.5,     # 1 req per 0.5s (polite pool)
         "arxiv": 3.5,        # 1 req per 3.5s (3s+ delay required)
         "hackernews": 1.0,   # 1 req per 1s (be nice)
