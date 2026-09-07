@@ -1,0 +1,196 @@
+{
+  "repos": {
+    "universal-commerce-protocol/ucp": {
+      "starrers": [
+        "igrigorik"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243679+00:00",
+      "last_seen": "2026-09-07T15:51:15.243706+00:00",
+      "info": {
+        "description": "Commerce protocol",
+        "stars": 3358
+      }
+    },
+    "mermaid-js/mermaid": {
+      "starrers": [
+        "igrigorik"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243710+00:00",
+      "last_seen": "2026-09-07T15:51:15.243714+00:00",
+      "info": {
+        "description": "Diagram as code",
+        "stars": 0
+      }
+    },
+    "technopagan/cjpeg-dssim": {
+      "starrers": [
+        "igrigorik",
+        "yoavweiss"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243717+00:00",
+      "last_seen": "2026-09-07T15:51:15.244010+00:00",
+      "info": {
+        "description": "JPEG compression",
+        "stars": 0
+      }
+    },
+    "boundaryml/baml": {
+      "starrers": [
+        "gil--",
+        "tobi",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243724+00:00",
+      "last_seen": "2026-09-07T15:51:15.243803+00:00",
+      "info": {
+        "description": "Programming language for agents",
+        "stars": 9146
+      }
+    },
+    "opencode-ai/opencode": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243730+00:00",
+      "last_seen": "2026-09-07T15:51:15.243784+00:00",
+      "info": {
+        "description": "AI coding agent",
+        "stars": 13725
+      }
+    },
+    "stanfordnlp/dspy": {
+      "starrers": [
+        "gil--",
+        "tobi"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243755+00:00",
+      "last_seen": "2026-09-07T15:51:15.243788+00:00",
+      "info": {
+        "description": "Programming (not prompting) LLMs",
+        "stars": 37825
+      }
+    },
+    "openai/harmony": {
+      "starrers": [
+        "gil--",
+        "simonw"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243767+00:00",
+      "last_seen": "2026-09-07T15:51:15.243810+00:00",
+      "info": {
+        "description": "OpenAI harmony",
+        "stars": 0
+      }
+    },
+    "pydantic/monty": {
+      "starrers": [
+        "tobi",
+        "simonw",
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243792+00:00",
+      "last_seen": "2026-09-07T15:51:15.243813+00:00",
+      "info": {
+        "description": "Python interpreter for AI",
+        "stars": 8179
+      }
+    },
+    "prefecthq/marvin": {
+      "starrers": [
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243817+00:00",
+      "last_seen": "2026-09-07T15:51:15.243822+00:00",
+      "info": {
+        "description": "AI agent framework",
+        "stars": 0
+      }
+    },
+    "openai/codex": {
+      "starrers": [
+        "jxnl"
+      ],
+      "first_seen": "2026-09-07T15:51:15.243826+00:00",
+      "last_seen": "2026-09-07T15:51:15.244005+00:00",
+      "info": {
+        "description": "OpenAI codex",
+        "stars": 0
+      }
+    },
+    "kiwoongeom/gmc-mcp": {
+      "starrers": [],
+      "first_seen": "2026-09-07",
+      "last_seen": "2026-09-07",
+      "info": {
+        "description": "MCP server for Google Merchant Center",
+        "stars": 14
+      },
+      "discovered_by": "rabbit_hole"
+    },
+    "itallstartedwithaidea/advertising-hub": {
+      "starrers": [],
+      "first_seen": "2026-09-07",
+      "last_seen": "2026-09-07",
+      "info": {
+        "description": "14 platforms, 25+ AI agents",
+        "stars": 39
+      },
+      "discovered_by": "rabbit_hole"
+    },
+    "lukesnowden/google-shopping-feed": {
+      "starrers": [],
+      "first_seen": "2026-09-07",
+      "last_seen": "2026-09-07",
+      "info": {
+        "description": "PHP Google Shopping feed",
+        "stars": 68
+      },
+      "discovered_by": "rabbit_hole"
+    },
+    "spasimir-tsvetanov/google-merchant-center-feed-audit": {
+      "starrers": [],
+      "first_seen": "2026-09-07",
+      "last_seen": "2026-09-07",
+      "info": {
+        "description": "Audit GMC feed",
+        "stars": 1
+      },
+      "discovered_by": "rabbit_hole"
+    }
+  },
+  "developers": {
+    "igrigorik": [
+      "universal-commerce-protocol/ucp",
+      "mermaid-js/mermaid",
+      "technopagan/cjpeg-dssim"
+    ],
+    "gil--": [
+      "boundaryml/baml",
+      "opencode-ai/opencode",
+      "stanfordnlp/dspy",
+      "openai/harmony"
+    ],
+    "tobi": [
+      "boundaryml/baml",
+      "opencode-ai/opencode",
+      "stanfordnlp/dspy",
+      "pydantic/monty"
+    ],
+    "simonw": [
+      "boundaryml/baml",
+      "pydantic/monty",
+      "openai/harmony"
+    ],
+    "jxnl": [
+      "pydantic/monty",
+      "prefecthq/marvin",
+      "openai/codex"
+    ],
+    "yoavweiss": [
+      "technopagan/cjpeg-dssim"
+    ]
+  },
+  "convergences": [],
+  "last_updated": "2026-09-07T15:51:21.896478+00:00"
+}
