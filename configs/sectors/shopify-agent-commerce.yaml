@@ -38,6 +38,11 @@ seed_builders:
   - cyberandy          # Andrea Volpini — WordLift, Reasoning Web
   - PSH_Lewis          # Patrick Lewis — RAG/tool-use at Cohere
 
+  # Google Ads / Merchant Center
+  - FeedArmy           # Emmanuel Flossie — identified 8 conversational attributes
+  - maxgeorge          # Max George — former Google Agentic Commerce Lead
+  - vivekchandran      # Vivek Chandran — TPM Lead AI Overview & Mode
+
   # Probook Team
   # George Eliadis (@georgeprobook) — Founder
   # Lewis Zhang — CTO (no public GitHub)
