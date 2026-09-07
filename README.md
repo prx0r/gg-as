@@ -1,6 +1,8 @@
-# GitGoblin
+# GG-AS — GitGoblin Agent Commerce
 
-**Technical alpha before virality.** GitGoblin watches high-signal builders, repositories, papers, dependencies and technical discourse; converts their activity into evidence-backed observations; detects independent expert convergence; extracts the underlying technical primitive; and emits downstream product opportunities.
+**Technical alpha for agent-native commerce.** GG-AS watches Shopify/UCP infrastructure, agent-shopping ranking, supplier OS, home services AI, and compatibility matching; converts activity into evidence-backed observations; detects convergence across Google/Shopify/Meta/OpenAI; extracts the primitives; and emits product opportunities.
+
+Built on GitGoblin. Focused on the agent commerce opportunity.
 
 GitGoblin is designed as both:
 

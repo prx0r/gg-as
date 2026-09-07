@@ -1,0 +1,121 @@
+id: shopify-agent-commerce
+description: Shopify agentic commerce, UCP, Catalog, agent-native shopping, supplier OS, home services AI.
+
+seed_builders:
+  # Shopify UCP/Infrastructure
+  - igrigorik          # Ilya Grigorik — Shopify Distinguished Engineer, UCP architect
+  - gil--              # Gil Greenberg — Shopify Staff PM, iMessage shopping agent
+  - yoavweiss          # Yoav Weiss — Shopify/Web standards, W3C
+
+  # Google/ACP
+  - jingyli            # Jing Li — Google, Location search/serviceability
+
+  # Meta/Feeds
+  - lhwa               # Lee Hwa — Meta, ACP pricing/feeds
+
+  # Timefold/Scheduling
+  - ge0ffrey           # Geoffrey De Smet — Timefold CTO, OptaPlanner creator
+  - rsynek             # Radovan Synek — Timefold routing/optimization
+  - triceo             # Lukáš Petrovický — Timefold solver engineer
+
+  # Attribution
+  - jalexspringer      # Alex Springer — OpenAttribution
+
+  # Home Services Operators
+  - WilsonCompanies    # Wilson Companies — $4.8M to $53M growth
+  - TheHVACJack        # HVAC operator
+  - georgeprobook      # Probook — AI OS for home services
+
+  # Commerce Intelligence
+  - kurtinc            # Kurt Elster — Shopify transaction data
+  - Romain_Lapeyre     # Romain Lapeyre — Gorgias CEO, MCP adoption
+  - aleyda             # Aleyda Solís — AEO/AI-search researcher
+  - iPullRank          # Mike King — Agent-shaped web
+  - til_fabian         # Fabian van Til — European SEO/localization
+
+  # Agent Commerce Analysis
+  - FredaDuan          # Freda Duan — Agentic commerce analysis
+  - cyberandy          # Andrea Volpini — WordLift, Reasoning Web
+  - PSH_Lewis          # Patrick Lewis — RAG/tool-use at Cohere
+
+  # Probook Team
+  # George Eliadis (@georgeprobook) — Founder
+  # Lewis Zhang — CTO (no public GitHub)
+
+keywords:
+  - ucp
+  - universal commerce protocol
+  - agentic commerce
+  - shopify catalog
+  - shopify agents
+  - product feed
+  - agent shopping
+  - mcp commerce
+  - checkout
+  - cart
+  - merchant
+  - catalog
+  - inventory
+  - availability
+  - compatibility
+  - replacement parts
+  - home services
+  - field service
+  - dispatch
+  - scheduling
+  - ai receptionist
+  - voice agent
+  - booking
+  - quote
+  - invoice
+  -crm
+  - supplier
+  - contractor
+  - installer
+  - ev charger
+  - heat pump
+  - hvac
+  - plumbing
+  - electrical
+  - service area
+  - certification
+  - ozev
+  - mcs
+
+arxiv_queries:
+  - agentic commerce protocol
+  - ai shopping agent
+  - product recommendation agent
+  - voice agent scheduling
+  - field service optimization
+  - dispatch algorithm
+
+rss_feeds:
+  - https://shopify.engineering/blog.atom
+  - https://developers.googleblog.com/feeds/posts/default
+  - https://www.anthropic.com/feed.xml
+
+ecosyste_repos:
+  - Universal-Commerce-Protocol/ucp
+  - Shopify/ucp-cli
+  - anthropics/commerce-agents
+  - gil--/ucp-agent-imessage
+  - NVIDIA-AI-Blueprints/Retail-Agentic-Commerce
+  - TimefoldAI/timefold-quickstarts
+  - TimefoldAI/timefold-solver
+  - Accio-org/CommerceAgentBench
+  - Accio-org/BusinessArena
+  - agentic-commerce-protocol/agentic-commerce-protocol
+  - openattribution-org
+
+expertise_languages: [python, typescript, go, rust]
+
+primitive_rules:
+  agent-commerce-infrastructure: [ucp, catalog, feed, checkout, cart, merchant, agent]
+  agent-shopping-ranking: [rank, filter, score, recommend, eligibility, constraint]
+  supplier-operations: [dispatch, schedule, booking, quote, invoice, calendar, crm]
+  voice-booking: [voice, call, appointment, schedule, availability, confirmation]
+  compatibility-matching: [compatibility, oem, part, specification, fit, replacement]
+  service-area-matching: [service_area, certification, qualification, license, coverage]
+  feed-optimization: [feed, product, title, description, gtin, barcode, taxonomy]
+  attribution-tracking: [attribution, retrieved, cited, content, provenance, freshness]

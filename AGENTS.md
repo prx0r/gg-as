@@ -4,7 +4,7 @@ Read this before changing the repository.
 
 ## Mission
 
-GitGoblin converts public technical activity into **evidence-backed frontier signals**, then into falsifiable product hypotheses. It is not a content scraper and not a startup-idea text generator.
+GG-AS converts public technical activity in agent-native commerce into **evidence-backed frontier signals**, then into falsifiable product hypotheses. It watches Shopify/UCP, Google/ACP, Meta/feeds, Anthropic/commerce-agents, Timefold/scheduling, and Probook/supplier-OS to find capabilities before they ship.
 
 ## Non-negotiable invariants
 
