@@ -114,6 +114,34 @@ license → architecture → benchmarks/tests → dependency graph → primitive
 
 For permissive code, reuse still requires notices/attribution and compliance with the exact license. For copyleft/unknown repositories, default to API consumption, interoperability, or independent reimplementation until reviewed.
 
+## Background execution rules
+
+**NEVER run scans in the foreground.** Always use `setsid` to fully detach.
+
+```bash
+# WRONG — blocks the shell
+gitgoblin scan agent_commerce --expand 2
+
+# CORRECT — fully detached, survives shell exit
+setsid gitgoblin scan agent_commerce --expand 1 --no-research > /tmp/gitgoblin_scan.log 2>&1 &
+
+# CORRECT — with PID tracking
+setsid bash -c 'echo \$\$ > /tmp/gitgoblin.pid && gitgoblin scan agent_commerce --expand 1 --no-research >> /tmp/gitgoblin_scan.log 2>&1' &
+
+# Check if running
+ps aux | grep gitgoblin | grep -v grep
+
+# Check results
+cat /tmp/gitgoblin_scan.log | tail -20
+
+# Kill if needed (never kill opencode processes)
+kill $(cat /tmp/gitgoblin.pid) 2>/dev/null
+```
+
+**Why `setsid`:** `nohup cmd &` still attaches to the parent shell. `setsid` creates a new session, fully detaching the process. The agent remains responsive.
+
+**Resource limits:** Never run expand > 2 in production. Use `--no-research` for fast scans. Monitor with `free -m` and `ps aux --sort=-%mem | head -5`.
+
 ## Operational discipline
 
 - Secrets only through environment variables/secrets manager.
