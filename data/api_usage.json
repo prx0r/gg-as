@@ -1,0 +1,25 @@
+{
+  "github": {
+    "core": 0,
+    "search": 0,
+    "graphql": 0
+  },
+  "openalex": 0,
+  "arxiv": 0,
+  "hackernews": 0,
+  "total_cost_usd": 0.0,
+  "runs": [
+    {
+      "run_id": "test_1788789759",
+      "sector": "high-certainty-agentic-commerce",
+      "timestamp": "2026-09-07T14:02:39.424455+00:00",
+      "observations": 1058,
+      "signals": 0,
+      "api_calls": {
+        "github": 1058
+      },
+      "duration_seconds": 36.02490305900574,
+      "cost_estimate": 0.0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "run_id": "test_1788789759",
+  "sector": "high-certainty-agentic-commerce",
+  "mode": "quick",
+  "seeds": [
+    "igrigorik",
+    "gil--"
+  ],
+  "timestamp": "2026-09-07T14:02:39.422286+00:00",
+  "duration_seconds": 36.02490305900574,
+  "api_calls": {
+    "github": 1058
+  },
+  "observations": 1058,
+  "signals_count": 0,
+  "opportunities_count": 0,
+  "assessment": {
+    "quality": "NO_SIGNALS",
+    "recommendation": "Try different seeds or lower threshold",
+    "confidence": 0
+  },
+  "signals": [],
+  "opportunities": []
+}

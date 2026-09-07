@@ -41,6 +41,10 @@ def main() -> None:
                        default="standard",
                        help="Scan mode: quick(2min), standard(5min), thorough(10min), deepdive(20min), stealth(15min), targeted(1min)")
     
+    p_mission = sub.add_parser("mission", help="Parse a natural language mission into a campaign")
+    p_mission.add_argument("text", nargs="+", help="Mission description")
+    p_mission.add_argument("--save", action="store_true", help="Save as campaign config")
+    
     p_modes = sub.add_parser("modes", help="List available scan modes")
 
     p_rank = sub.add_parser("rank", help="Show current signals")
@@ -114,6 +118,19 @@ def main() -> None:
         print(f"\nDuration: {duration:.1f}s")
         print(f"Assessment: {experiment['assessment']['quality']}")
         print(f"Recommendation: {experiment['assessment']['recommendation']}")
+    
+    elif args.cmd == "mission":
+        from .mission_parser import parse_mission, save_campaign_config
+        
+        mission = " ".join(args.text)
+        config = parse_mission(mission)
+        
+        if args.save:
+            path = save_campaign_config(config)
+            print(f"Campaign saved to: {path}")
+            print()
+        
+        print(json.dumps(config, indent=2))
     
     elif args.cmd == "modes":
         from .scan_modes import list_modes
